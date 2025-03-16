@@ -1,0 +1,14 @@
+{
+  "packageInformation": {
+    "PrimeSum": {
+      "rootPackageName": "PrimeSum",
+      "fileNameHash": "-3554696676713763723",
+      "timeStamp": 1741614333,
+      "buildFlag": true,
+      "exeName": "main",
+      "hasSubPkgs": false
+    }
+  },
+  "jsonHash": "3729239655062024534",
+  "rootPackageName": "PrimeSum"
+}
