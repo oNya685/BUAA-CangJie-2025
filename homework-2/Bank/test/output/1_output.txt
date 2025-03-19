@@ -1,0 +1,36 @@
+Error
+deposit 200.50
+deposit 500.75
+Error
+Error
+Error
+Error
+Error
+saving account, id: 101, owner: Alice, balance: 850.50
+checking account, id: 102, owner: Bob, balance: -149.25
+saving account, id: 103, owner: Charlie, balance: 350.00
+checking account, id: 104, owner: David, balance: 175.25
+Error
+withdraw 50.00
+transfer 50.00
+transfer 200.00
+transfer 150.00
+transfer 300.00
+saving account, id: 105, owner: Eve, balance: 150.00
+checking account, id: 106, owner: Frank, balance: -200.00
+deposit 100.00
+withdraw 50.00
+deposit 200.00
+withdraw 800.00
+transfer 100.00
+saving account, id: 105, owner: Eve, balance: 250.00
+checking account, id: 106, owner: Frank, balance: -1050.00
+saving account, id: 101, owner: Alice, balance: 355.50
+saving account, id: 103, owner: Charlie, balance: 825.00
+checking account, id: 102, owner: Bob, balance: -379.25
+deposit 300.00
+deposit 50.00
+withdraw 100.00
+withdraw 700.00
+transfer 50.00
+

@@ -1,0 +1,61 @@
+create 0 Alice 101 500.00
+create 1 Bob 102 1000.00
+create 0 Charlie 103 200.00
+create 1 David 104 50.00
+create 0 Alice 101 300.00  
+deposit 101 200.50
+deposit 102 500.75
+history
+deposit 103 100.00
+deposit 104 25.25
+deposit 105 300.00  
+withdraw 101 100.00
+withdraw 102 1200.00  
+withdraw 103 350.00  
+withdraw 104 50.00
+withdraw 106 20.00  
+transfer 101 102 50.00
+transfer 102 103 200.00
+transfer 103 104 150.00  
+transfer 102 101 300.00
+transfer 108 104 10.00  
+transfer 102 109 15.00  
+info 101
+info 102
+info 103
+info 104
+info 110  
+history
+create 0 Eve 105 0.00
+create 1 Frank 106 500.00
+deposit 105 100.00
+withdraw 105 50.00
+deposit 106 200.00
+withdraw 106 800.00  
+transfer 106 105 100.00
+info 105
+info 106
+history
+withdraw 101 600.00  
+withdraw 102 50.00  
+transfer 102 103 500.00
+transfer 103 101 50.00
+deposit 101 75.00
+deposit 103 25.00
+withdraw 104 10.00  
+transfer 101 102 20.00
+deposit 102 300.00
+deposit 105 50.00
+withdraw 106 100.00
+withdraw 106 700.00  
+transfer 106 105 50.00
+info 105
+info 106
+info 101
+info 103
+info 102
+history
+Exit
+transfer 106 105 100.00
+info 105
+info 106

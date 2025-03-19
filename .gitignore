@@ -9,5 +9,6 @@
 # !homework-2/**/*
 # =========== 配置 ===========
 !**/README.md
+!**/test/**/*
 .vscode/
 .cache/
