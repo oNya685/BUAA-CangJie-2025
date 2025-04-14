@@ -1,0 +1,14 @@
+{
+  "packageInformation": {
+    "Repeat": {
+      "rootPackageName": "Repeat",
+      "fileNameHash": "-88275424337060064",
+      "timeStamp": 1743524519,
+      "buildFlag": true,
+      "exeName": "main",
+      "hasSubPkgs": false
+    }
+  },
+  "jsonHash": "9144050960515053987",
+  "rootPackageName": "Repeat"
+}

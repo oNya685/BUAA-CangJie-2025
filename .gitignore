@@ -7,6 +7,7 @@
 !homework*/**/
 !homework-1/**/*
 !homework-2/**/*
+!homework-3/**/*
 # =========== 配置 ===========
 !**/README.md
 !**/test/**/*

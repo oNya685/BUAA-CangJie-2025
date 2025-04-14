@@ -1,0 +1,14 @@
+{
+  "packageInformation": {
+    "Iterator": {
+      "rootPackageName": "Iterator",
+      "fileNameHash": "5082527118678814620",
+      "timeStamp": 1743525818,
+      "buildFlag": true,
+      "exeName": "main",
+      "hasSubPkgs": false
+    }
+  },
+  "jsonHash": "1798304443639116768",
+  "rootPackageName": "Iterator"
+}
