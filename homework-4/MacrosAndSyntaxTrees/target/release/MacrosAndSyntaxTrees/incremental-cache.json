@@ -1,0 +1,22 @@
+{
+  "packageInformation": {
+    "MacrosAndSyntaxTrees.macros": {
+      "rootPackageName": "MacrosAndSyntaxTrees",
+      "fileNameHash": "-4307634855979928282",
+      "timeStamp": 1744718326,
+      "buildFlag": true,
+      "exeName": "",
+      "hasSubPkgs": false
+    },
+    "MacrosAndSyntaxTrees": {
+      "rootPackageName": "MacrosAndSyntaxTrees",
+      "fileNameHash": "-7293663289787799171",
+      "timeStamp": 1744717852,
+      "buildFlag": true,
+      "exeName": "main",
+      "hasSubPkgs": true
+    }
+  },
+  "jsonHash": "-1069759397954685192",
+  "rootPackageName": "MacrosAndSyntaxTrees"
+}

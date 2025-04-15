@@ -1,0 +1,42 @@
+{
+  "resolves": [
+    {
+      "rootPackageName": "MacrosAndSyntaxTrees",
+      "modulePath": ".",
+      "packagePath": "/home/onya/CangJie/homework-4/MacrosAndSyntaxTrees/src/macros",
+      "fullName": "MacrosAndSyntaxTrees.macros",
+      "isMacroPackage": true,
+      "output-type": "dynamic",
+      "compile-option": "",
+      "native-compile-option": "",
+      "customized-option": {},
+      "link-option": "",
+      "native-link-option": "",
+      "requires": [],
+      "c_libs": {},
+      "isTestPkg": false,
+      "accessLevel": "public"
+    },
+    {
+      "rootPackageName": "MacrosAndSyntaxTrees",
+      "modulePath": ".",
+      "packagePath": "/home/onya/CangJie/homework-4/MacrosAndSyntaxTrees/src",
+      "fullName": "MacrosAndSyntaxTrees",
+      "isMacroPackage": false,
+      "output-type": "executable",
+      "compile-option": "",
+      "native-compile-option": "",
+      "customized-option": {},
+      "link-option": "",
+      "native-link-option": "",
+      "requires": [
+        "MacrosAndSyntaxTrees.macros"
+      ],
+      "c_libs": {},
+      "isTestPkg": false,
+      "accessLevel": "public"
+    }
+  ],
+  "binDeps": {},
+  "crossBinDeps": {}
+}
