@@ -18,19 +18,6 @@ private func param_print_value(func_params: ArrayList<FuncParam>): String {
     return result.toString()
 }
 
-private func find_return_tokens(block: Block, block_nodes_without_return: ArrayList<Node>): Tokens {
-    let return_tokens = Tokens()
-    for (i in 0 .. block.nodes.size) {
-        let node = block.nodes[i]
-        if (node.toTokens()[0].kind == RETURN) {
-            return_tokens.append(node.toTokens().remove(0))
-            break
-        }
-        block_nodes_without_return.append(node)
-    }
-    return return_tokens
-}
-
 private func get_assign_node(result_string: String, return_value_tokens: Tokens): Option<VarDecl> {
     if (return_value_tokens.size == 0) { return None }
     let assign_node_tokens = Tokens()
@@ -66,26 +53,48 @@ private func get_return_node(result_string: String, return_value_tokens: Tokens)
     return ReturnExpr(return_node_tokens)
 }
 
+private class ReturnVisitor <: Visitor {
+    private var funcParams: ArrayList<FuncParam>
+
+    public init(func_params: ArrayList<FuncParam>) {
+        this.funcParams = func_params
+    }
+
+    public override func visit(block: Block): Unit {
+        var i = 0
+        while (i < block.nodes.size) {
+            let inner_node = block.nodes[i]
+            if (inner_node is ReturnExpr) {
+                if ((inner_node as ReturnExpr).getOrThrow().expr is RefExpr && ((inner_node as ReturnExpr).getOrThrow().expr as RefExpr).getOrThrow().identifier.value == "__return_value_only_used_in_log_macro__") {
+                    // do nothing
+                } else {
+                    let result_string = "__return_value_only_used_in_log_macro__"
+                    let return_value_tokens = (inner_node as ReturnExpr).getOrThrow().expr.toTokens()
+                    block.nodes.remove(i)
+                    block.nodes.insert(i, get_assign_node(result_string, return_value_tokens).getOrThrow())
+                    block.nodes.insert(i + 1, get_print_node(this.funcParams, result_string, return_value_tokens).getOrThrow())
+                    block.nodes.insert(i + 2, get_return_node(result_string, return_value_tokens).getOrThrow())
+                    break
+                }
+            } else {
+                inner_node.traverse(this)
+            }
+            i++
+        }
+    }
+}
+
 public macro log(args: Tokens): Tokens {
     let func_decl = FuncDecl(args)
     let func_params = func_decl.funcParams
     
-    let log_block_nodes = ArrayList<Node>() // codes without return
+    let visitor = ReturnVisitor(func_params)
 
-    var return_value_tokens = find_return_tokens(func_decl.block, log_block_nodes)
-    
-    let result_string = "__return_value_of_${func_decl.identifier.value}__"
-    let assign_node = get_assign_node(result_string, return_value_tokens)
-    let print_node = get_print_node(func_params, result_string, return_value_tokens)
-    let return_node = get_return_node(result_string, return_value_tokens)
-
-    if (assign_node.isSome()) { log_block_nodes.append(assign_node.getOrThrow()) }
-    if (print_node.isSome()) { log_block_nodes.append(print_node.getOrThrow()) }
-    if (return_node.isSome()) { log_block_nodes.append(return_node.getOrThrow()) }
+    func_decl.block.traverse(visitor)
 
     return quote(
         func $(func_decl.identifier)($(func_decl.funcParams)) {
-            $(log_block_nodes)
+            $(func_decl.block.nodes)
         }
     )
 }
