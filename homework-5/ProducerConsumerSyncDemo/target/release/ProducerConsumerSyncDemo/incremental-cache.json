@@ -1,0 +1,14 @@
+{
+  "packageInformation": {
+    "ProducerConsumerSyncDemo": {
+      "rootPackageName": "ProducerConsumerSyncDemo",
+      "fileNameHash": "-3267960392448785513",
+      "timeStamp": 1745853819,
+      "buildFlag": true,
+      "exeName": "main",
+      "hasSubPkgs": false
+    }
+  },
+  "jsonHash": "-4686253353551884684",
+  "rootPackageName": "ProducerConsumerSyncDemo"
+}

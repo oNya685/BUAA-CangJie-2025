@@ -1,0 +1,17 @@
+[33mwarning[0m: unused variable:'i'
+  [36m==>[0m /home/onya/CangJie/homework-5/ProducerConsumerSyncDemo/src/main.cj:95:10:
+   [36m| [0m
+[36m95[0m [36m| [0m    for (i in 0..PRODUCERS_COUNT) {[0m
+   [36m| [0m         [33m^ unused variable[0m
+   [36m| [0m
+   [36m#[0m [0mnote[0m: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+[33mwarning[0m: unused variable:'i'
+  [36m==>[0m /home/onya/CangJie/homework-5/ProducerConsumerSyncDemo/src/main.cj:98:10:
+   [36m| [0m
+[36m98[0m [36m| [0m    for (i in 0..CONSUMERS_COUNT) {[0m
+   [36m| [0m         [33m^ unused variable[0m
+   [36m| [0m
+   [36m#[0m [0mnote[0m: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+2 warnings generated, 2 warnings printed.
